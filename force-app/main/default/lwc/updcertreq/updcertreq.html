@@ -1,0 +1,150 @@
+<!-- <template>
+
+    <lightning-record-edit-form 
+    record-id={recordId}
+    onsubmit={handleSubmit}            
+    object-api-name="Certification_Requestt__c"
+   
+    onsuccess={handleSuccess}>
+  
+  
+    <lightning-input-field field-name="Name" 
+    label="Certification Request ID">
+  
+
+    </lightning-input-field>
+
+    <lightning-input-field field-name="Employee__c" 
+   
+    label="Employee">
+   
+
+    </lightning-input-field>
+
+    <lightning-input-field field-name="Certification__c" 
+    value="Certification__c"
+    label="Certification">
+        
+    </lightning-input-field> 
+    
+    <lightning-input-field field-name="Status__c" 
+   
+    label="Status">
+   
+        
+    </lightning-input-field>
+    
+    <lightning-input-field field-name="Voucher__c" 
+    
+    label="Voucher">
+   
+    </lightning-input-field> 
+
+    <lightning-button type="submit"
+    class="slds-m-top_small"
+    label="Update Certification Request">
+
+    </lightning-button> 
+    <lightning-button
+            label="Cancel"
+            class="slds-m-around_medium"
+            onclick={navigateToList}
+        ></lightning-button>
+   
+    
+
+    </lightning-record-edit-form>
+
+</template> -->
+<template>
+
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+    aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+    <div class="slds-modal__container">
+        <header class="slds-modal__header">
+            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                title="Close" onclick={navigateToRecordPage}>
+                <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                    size="small"></lightning-icon>
+            </button>
+            <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate"
+            >Update Certification Request Details</h2>
+            </header>
+            
+
+            <div class="slds-modal__content slds-p-around_medium"
+             id="modal-content-id-1">        
+
+
+
+
+<!-- 
+    <div class="slds-align_absolute-center">
+        <b>Update Certification Request Details</b>
+    </div> -->
+    <lightning-record-edit-form record-id={recordId}
+    onsubmit={handleSubmit}            
+    object-api-name="Certification_Requestt__c"
+    onsuccess={handleSuccess}>
+  
+
+    <lightning-input-field field-name="Name" 
+    label="Certification Request ID">
+
+    </lightning-input-field>
+
+    <lightning-input-field field-name="Employee__c" 
+    label="Employee">
+
+    </lightning-input-field>
+
+    <lightning-input-field field-name="Certification__c" 
+    label="Certification">
+        
+    </lightning-input-field> 
+
+    <lightning-input-field field-name="Due_Date__c" 
+    label="Due Date">
+        
+    </lightning-input-field> 
+    
+    <lightning-input-field field-name="Status__c" 
+    label="Status">
+        
+    </lightning-input-field>
+    
+    <lightning-input-field field-name="Voucher__c" 
+    label="Voucher">
+        
+    </lightning-input-field> 
+    <lightning-input-field field-name="Comments__c"
+    label="Comments">
+
+    </lightning-input-field>
+    
+
+    <footer class="slds-modal__footer">
+
+        <lightning-button   
+        class="slds-m-top_small"
+        onclick={navigateToRecordPage}  
+        label="Cancel">
+        </lightning-button>
+        &nbsp;&nbsp;
+
+    <lightning-button type="submit"
+    class="slds-m-top_small" variant="brand"
+    label="Update Certification Request">
+
+    </lightning-button> 
+
+   
+    
+</footer>
+    </lightning-record-edit-form>
+</div>
+   
+</div>
+</section>
+
+</template>

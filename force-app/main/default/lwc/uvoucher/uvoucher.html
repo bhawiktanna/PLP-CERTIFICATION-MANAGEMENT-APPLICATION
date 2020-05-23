@@ -1,0 +1,89 @@
+<template>
+
+
+
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+    aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+    <div class="slds-modal__container">
+        <header class="slds-modal__header">
+            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                title="Close" onclick={navigateToRecordPage}>
+                <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                    size="small"></lightning-icon>
+            </button>
+            <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate"
+            >Update Voucher Details</h2>
+            </header>
+            
+
+            <div class="slds-modal__content slds-p-around_medium"
+             id="modal-content-id-1">        
+
+
+
+
+
+
+    <!-- <div class="slds-align_absolute-center"><b>Voucher Update Form</b>
+    </div> -->
+    <lightning-record-edit-form record-id={recordId}
+    object-api-name="Voucherr__c"
+     onsubmit={handleSubmit}            
+     onsuccess={handleSuccess}>
+    
+    <lightning-input-field field-name="Voucher_ID__c" 
+    label="Voucher ID">
+
+    </lightning-input-field>
+
+    <lightning-input-field field-name="Name" value={Name}
+    label="Voucher Name" required>
+
+    </lightning-input-field>
+    <lightning-input-field field-name="Voucher_Cost__c" value={Voucher_Cost__c}
+    label="Voucher Cost" required>
+
+    </lightning-input-field>
+    <lightning-input-field field-name="Validity__c" value={Validity__c}
+    label="Validity" required>
+
+    </lightning-input-field>
+    <lightning-input-field field-name="Voucher_is_used_or_not__c" value={Voucher_is_used_or_not__c}
+    label="Active">
+    
+    </lightning-input-field>
+    <lightning-input-field field-name="Certification__c" value={Certification__c}
+    label="Certification" required>
+    
+    </lightning-input-field>
+
+    <footer class="slds-modal__footer">
+    <lightning-button
+    label="Cancel"
+    class="slds-m-around_medium"
+    onclick={navigateToRecordPage}>
+    </lightning-button>
+
+    
+    <lightning-button  type="submit" class="slds-m-top_small"  
+    variant="brand"
+    label="Update Voucher">
+    </lightning-button>
+
+    </footer>
+
+
+<!-- 
+    <lightning-button
+    label="Cancel"
+    class="slds-m-around_medium"
+    onclick={navigateToRecordPage}
+    ></lightning-button> -->
+
+
+</lightning-record-edit-form>
+</div>
+   
+</div>
+</section>
+</template>

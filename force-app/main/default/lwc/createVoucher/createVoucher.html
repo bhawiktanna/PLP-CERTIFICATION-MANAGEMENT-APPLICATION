@@ -1,0 +1,244 @@
+<template>
+    <!-- <template if:true={display}> -->
+        <!-- <div class="slds-align_absolute-center">
+            <b>Create New Voucher</b>
+        </div>     -->
+
+
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+        aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+            <header class="slds-modal__header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                    title="Close" onclick={navigatetorecentlist}>
+                    <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                        size="small"></lightning-icon>
+                </button>
+                <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate"
+                >Enter New Voucher Details</h2>
+                </header>
+                
+    
+                <div class="slds-modal__content slds-p-around_medium"
+                 id="modal-content-id-1">  
+
+
+
+
+
+
+
+    <lightning-record-edit-form object-api-name="Voucherr__c"
+    onsuccess={handleSuccess}>
+    <!-- <lightning-input-field field-name="Voucher_ID__c" value={Voucher_ID__c} disabled>
+
+    </lightning-input-field> -->
+    <lightning-input-field  field-name="Name" required> 
+
+    </lightning-input-field>
+
+    <lightning-input-field field-name="Voucher_Cost__c" required>
+
+    </lightning-input-field>
+
+    <lightning-input-field field-name="Validity__c" required>
+
+    </lightning-input-field>
+
+    <lightning-input-field field-name="Voucher_is_used_or_not__c" >
+
+    </lightning-input-field>
+
+    <lightning-input-field field-name="Certification__c" required>
+
+    </lightning-input-field>
+    <!-- <br> -->
+    <footer class="slds-modal__footer">
+    <lightning-button   
+    class="slds-m-top_small"
+    onclick={navigatetorecentlist}  
+    label="Cancel">
+    </lightning-button>
+
+    &nbsp;&nbsp;
+   
+
+    <lightning-button  type="submit" class="slds-m-top_small" 
+    variant="brand"
+     label="Create new Voucher">
+
+    </lightning-button>
+</footer>
+   
+</lightning-record-edit-form>
+</div>
+   
+</div>
+</section>
+<!-- </template> -->
+
+
+<!-- <template if:true={createvoucher}>
+    <br><br><br>
+
+    <lightning-button  onclick={create}  
+    variant="brand" label="Create Voucher">
+
+    </lightning-button>
+    <br><br><br>
+    <div class="slds-align_absolute-center"><b>
+        Voucher Details Table</b>
+    </div>
+    
+    <br><br>  
+
+    <table class="slds-table slds-table_cell-buffer 
+    slds-no-row-hover slds-table_bordered">
+
+        <thead>
+            <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                    <div class="slds-truncate" 
+                    title="Voucher ID">Voucher ID</div>
+                </th>
+
+                <th class="" scope="col">
+                    <div class="slds-truncate" 
+                    title="Voucher Name">Voucher Name</div>
+                </th>
+            
+
+            
+                <th class="" scope="col">
+                    <div class="slds-truncate" 
+                    title="Voucher Cost(in INR)">Voucher Cost(in INR)</div>
+                </th>
+           
+
+            
+                <th class="" scope="col">
+                    <div class="slds-truncate" 
+                    title="Validity">Validity</div>
+                </th>
+          
+           
+                <th class="" scope="col">
+                    <div class="slds-truncate" 
+                    title="Active Voucher">Active Voucher</div>
+                </th>
+
+                <th class="" scope="col">
+                    <div class="slds-truncate" 
+                    title="Certification Details">Certification Details</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" 
+                    title="Edit Record">Edit Record
+                </div></th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" 
+                    title="Delete Record">Delete Record
+                </div></th>    
+            </tr>
+        </thead>
+        <tbody>
+            <template for:each={vouchers} for:item="voucher" 
+            for:index="index">
+                <tr key={unique} class="slds-hint-parent">
+                    <td data-label="Active Voucher">
+                        <div class="slds-truncate" >
+                            {voucher.Voucher_ID__c}</div>
+                    </td>
+                    <td data-label="Voucher Name">
+                        <div class="slds-truncate" >{voucher.Name}</div>
+                    </td>
+                    <td data-label="Voucher Cost(in INR)">
+                        <div class="slds-truncate" >{voucher.Voucher_Cost__c}</div>
+                    </td>
+                    <td data-label="Validity">
+                        <div class="slds-truncate" >{voucher.Validity__c}</div>
+                    </td>
+                    <td data-label="Active Voucher">
+                        <div class="slds-truncate" >{voucher.Voucher_is_used_or_not__c}</div>
+                    </td>
+                    <td data-label="Active Voucher">
+                        <div class="slds-truncate" >{voucher.Certification__c}</div>
+                    </td>
+
+                    <td data-label="Edit">
+                        <lightning-button-icon 
+                        icon-name="utility:edit" 
+                        value={index}   
+                        alternative-text="Edit"   
+                        class="slds-m-left_xx-small" 
+                        onclick={handleEdit} 
+                        
+                        title="Edit">
+                        </lightning-button-icon>
+                    </td>
+                    <td data-label="Delete">
+                        <lightning-button-icon 
+                        icon-name="utility:delete" 
+                        value={index}   
+                        alternative-text="Delete"   
+                        class="slds-m-left_xx-small" 
+                        onclick={handleDelete} 
+                      
+                        title="Delete">
+                        </lightning-button-icon>
+                    </td>
+
+
+                </tr>
+            </template>
+        </tbody>
+        
+    </table>
+</template> -->
+
+
+<!-- <template if:true={updshow}>
+    <lightning-record-edit-form object-api-name="Voucherr__c"
+    record-id={recordId}
+    onsuccess={handleSuccess}>
+    <lightning-input-field field-name="Voucher_ID__c"
+    value={Voucher_ID__c} disabled>
+
+    </lightning-input-field>
+    <lightning-input-field  field-name="Name" 
+    value={Name} > 
+
+    </lightning-input-field>
+
+    <lightning-input-field field-name="Voucher_Cost__c"
+     value={Voucher_Cost__c}>
+
+    </lightning-input-field>
+
+    <lightning-input-field field-name="Validity__c" 
+    value={Validity__c}>
+
+    </lightning-input-field>
+
+    <lightning-input-field field-name="Voucher_is_used_or_not__c"
+    value={Voucher_is_used_or_not__c} >
+
+    </lightning-input-field>
+
+    <lightning-input-field field-name="Certification__c"
+    value={Certification__c} >
+
+    </lightning-input-field>
+
+    <lightning-button  type="submit" class="slds-m-top_medium" 
+     label="Update Voucher">
+
+    </lightning-button>
+  
+   
+</lightning-record-edit-form>
+</template> -->
+
+
+
+</template>

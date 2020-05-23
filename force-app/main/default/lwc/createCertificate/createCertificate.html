@@ -1,0 +1,235 @@
+<template>
+
+
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+    aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+    <div class="slds-modal__container">
+        <header class="slds-modal__header">
+            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                title="Close" onclick={navigatetorecentlist}>
+                <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                    size="small"></lightning-icon>
+            </button>
+            <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate"
+            >Enter New Certificate Details</h2>
+            </header>
+            
+
+            <div class="slds-modal__content slds-p-around_medium"
+             id="modal-content-id-1">  
+
+
+
+
+
+
+
+
+
+    <!-- <div class="slds-align_absolute-center">
+        <b>Create New Certificate</b>
+    </div> -->
+    
+    <!-- <template if:true={display}> -->
+    <lightning-record-edit-form onsubmit={handleSubmit}
+    object-api-name="Certificationn__c" onsuccess={handleSuccess}>
+    
+    <!-- <lightning-input-field field-name="Certification_ID__c" 
+    label="Certification ID" > -->
+
+    <!-- </lightning-input-field> -->
+
+    <lightning-input-field field-name="Name" 
+    label="Certification Name" required>
+
+    </lightning-input-field>
+    <lightning-input-field field-name="Certification_Cost__c" 
+    label="Certification Cost">
+
+    </lightning-input-field>
+    <lightning-input-field field-name="Comments__c" 
+    label="Comments">
+
+    </lightning-input-field>
+    <br>
+    <footer class="slds-modal__footer">
+
+    <lightning-button   
+    class="slds-m-top_small"
+    onclick={navigatetorecentlist}  
+    label="Cancel">
+    </lightning-button>
+
+    &nbsp;&nbsp;
+   
+    
+    <lightning-button  type="submit" class="slds-m-top_small"  
+    variant="brand"
+    label="Create new Certificate">
+    </lightning-button>
+    <!-- variant="brand" -->
+
+    <!-- <lightning-button
+    label="Cancel"
+    class="slds-m-around_medium"
+    onclick={navigateToList}
+    ></lightning-button> -->
+
+</footer>
+
+</lightning-record-edit-form>
+</div>
+   
+</div>
+</section>
+<!-- </template> -->
+
+<!-- <br><br><br> -->
+    
+
+
+
+
+<!-- <template if:true={createcert}>
+<lightning-button  onclick={create}  
+variant="brand" label="Create Certificate">
+
+</lightning-button>
+<br><br><br>
+<div class="slds-align_absolute-center"><b>Certificate Details Table</b>
+</div>
+
+<br><br>  
+
+
+<table class="slds-table slds-table_cell-buffer 
+slds-no-row-hover slds-table_bordered">
+
+    <thead>
+        <tr class="slds-line-height_reset">
+            
+
+
+            <th class="" scope="col">
+                <div class="slds-truncate" 
+                title="Certificate ID">Certification ID</div>
+            </th>
+        
+
+            <th class="" scope="col">
+                <div class="slds-truncate" 
+                title="Certificate Name">Certification Name</div>
+            </th>
+        
+
+        
+            <th class="" scope="col">
+                <div class="slds-truncate" 
+                title="Certification Cost">Certification Cost</div>
+            </th>
+       
+
+        
+            <th class="" scope="col">
+                <div class="slds-truncate" 
+                title="Comments">Comments</div>
+            </th>
+            <th class="" scope="col">
+                <div class="slds-truncate" 
+                title="Edit Record">Edit Record
+            </div></th>
+            <th class="" scope="col">
+                <div class="slds-truncate" 
+                title="Delete Record">Delete Record
+            </div></th>    
+
+      
+        </tr>
+    </thead>
+    <tbody>
+        <template for:each={certificates} for:item="cert" 
+        for:index="index">
+            <tr key={unique} class="slds-hint-parent">
+
+                <td data-label="Certificate ID">
+                    <div class="slds-truncate" >
+                        {cert.Certification_ID__c}
+                    </div>
+                </td>
+
+                <td data-label="Certificate Name">
+                    <div class="slds-truncate" >{cert.Name}</div>
+                </td>
+                <td data-label="Certification Cost">
+                    <div class="slds-truncate" >&#x20b9;{cert.Certification_Cost__c}</div>
+                </td>
+                <td data-label="Comments">
+                    <div class="slds-truncate" >{cert.Comments__c}</div>
+                </td>
+
+                <td data-label="Edit">
+                    <lightning-button-icon 
+                    icon-name="utility:edit" 
+                    value={index}   
+                    alternative-text="Edit"   
+                    class="slds-m-left_xx-small" 
+                    onclick={handleEdit} 
+                    data-recordid= {cert.Id}
+                    title="Edit">
+                    </lightning-button-icon>
+                </td>
+                <td data-label="Delete">
+                    <lightning-button-icon 
+                    icon-name="utility:delete" 
+                    value={index}   
+                    alternative-text="Delete"   
+                    class="slds-m-left_xx-small" 
+                    onclick={handleDelete} 
+                    data-recordid= {cert.Id}
+                    title="Delete">
+                    </lightning-button-icon>
+                </td>
+
+
+            </tr>
+        </template>
+    </tbody>
+    
+</table>
+</template> -->
+
+<!-- <template if:true={updshow}>
+    <lightning-record-edit-form record-id={recordId}
+    object-api-name="Certificationn__c" onsuccess={handleSuccess}>
+    
+    <lightning-input-field field-name="Certification_ID__c" 
+    label="Certification ID" >
+
+    </lightning-input-field>
+
+    <lightning-input-field field-name="Name" value={Name}
+    label="Certification Name" required>
+
+    </lightning-input-field>
+    <lightning-input-field field-name="Certification_Cost__c" 
+    value={Certification_Cost__c}
+    label="Certification Cost">
+
+    </lightning-input-field>
+    <lightning-input-field field-name="Comments__c" 
+    value={Comments__c}
+    label="Comments">
+
+    </lightning-input-field>
+    
+    <lightning-button  type="submit" class="slds-m-top_small"  
+    
+    label="Update Certificate">
+    </lightning-button>
+
+
+</lightning-record-edit-form>
+</template> -->
+
+
+</template>

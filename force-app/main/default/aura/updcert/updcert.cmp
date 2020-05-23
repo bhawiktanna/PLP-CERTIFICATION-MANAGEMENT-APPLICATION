@@ -1,0 +1,7 @@
+<aura:component implements="lightning:actionOverride,
+force:hasRecordId,force:hasSObjectName"
+access="global">
+
+<c:ucertificate recordId = "{!v.recordId}"/>
+
+</aura:component>	

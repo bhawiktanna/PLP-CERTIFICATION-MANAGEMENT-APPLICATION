@@ -1,0 +1,217 @@
+<template>
+
+    
+        <!-- <template if:true={display}> -->
+        <lightning-record-edit-form 
+        object-api-name="EMPLOYEEE__c" onsuccess={handleSuccess}>
+        
+        <!-- <lightning-input-field field-name="Employee_ID__c" 
+        label="Employee ID">
+
+        </lightning-input-field> -->
+    
+        <lightning-input-field field-name="Name" 
+        label="Employee Name" required>
+    
+        </lightning-input-field>
+        <lightning-input-field field-name="Experience__c" 
+        label="Experience" required>
+    
+        </lightning-input-field>
+        <lightning-input-field field-name="Primary_Skill__c" 
+        label="Primary Skill">
+    
+        </lightning-input-field>
+        <lightning-input-field field-name="Secondary_Skill__c" 
+        label="Secondary Skill">
+        
+        </lightning-input-field>
+        
+        <lightning-button  type="submit" 
+        class="slds-m-top_small"  
+        label="Create new Employee">
+        </lightning-button>
+    
+    
+    </lightning-record-edit-form>
+    <!-- </template> -->
+        <br><br>
+   
+
+
+
+    <!-- <template if:true={createemp}>
+        <div class="slds-align_top-right">  
+              <lightning-button  onclick={create}  
+                brand="variant" label="Create Employee">
+
+                </lightning-button>
+        </div>
+
+    <br><br><br>
+    <div class="slds-align_absolute-center"><b>Employee Details Table</b>
+</div>
+ 
+ <br><br>  
+
+    <table class="slds-table slds-table_cell-buffer 
+    slds-no-row-hover slds-table_bordered" >
+
+
+ <thead> 
+            <tr class="slds-line-height_reset">
+                
+
+
+                <th class="" scope="col">
+                    <div class="slds-truncate" 
+                    title="Employee ID" >Employee ID
+             
+                    </div>
+                </th>
+            
+                
+                <th class="" scope="col">
+                    <div class="slds-truncate" 
+                    title="Employee Name">Employee Name
+              
+                    </div>
+                </th>
+                
+
+            
+                <th class="" scope="col">
+                    <div class="slds-truncate" 
+                    title="Experience">Experience
+                    
+                     </div>
+                </th>
+           
+               
+            
+                <th class="" scope="col">
+                    <div class="slds-truncate" 
+                    title="Primary Skill">Primary Skill
+                 
+                     </div>
+                </th>
+               
+           
+                <th class="" scope="col">
+                    <div class="slds-truncate" 
+                    title="Secondary Skill">Secondary Skill
+                   
+                    </div>
+                </th>
+
+                <th class="" scope="col">
+                    <div class="slds-truncate" 
+                    title="Edit Record">Edit Record
+                </div></th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" 
+                    title="Delete Record">Delete Record
+                </div></th>    
+                </tr>
+  
+        </thead>
+        <tbody>
+            <template for:each={employees} for:item="emp" 
+            for:index="index">
+                <tr key={unique} class="slds-hint-parent">
+
+                    <td data-label="Employee ID">
+                        <div class="slds-truncate" >{emp.Employee_ID__c}</div>
+                    </td>
+
+                    <td data-label="Employee Name">
+                        <div class="slds-truncate" >{emp.Name}</div>
+                    </td>
+                    <td data-label="Experience">
+                        <div class="slds-truncate" >{emp.Experience__c}</div>
+                    </td>
+                    <td data-label="Primary Skill">
+                        <div class="slds-truncate" >{emp.Primary_Skill__c}</div>
+                    </td>
+                    <td data-label="Secondary Skill">
+                        <div class="slds-truncate" >{emp.Secondary_Skill__c}</div>
+                    </td>
+                    <td data-label="Edit">
+                    
+                        <lightning-button-icon 
+                        icon-name="utility:edit" 
+                        value={index}   
+                        alternative-text="Edit"   
+                        class="slds-m-left_xx-small" 
+                        onclick={handleEdit} 
+                        emp.Id}
+                        title="Edit">
+                        </lightning-button-icon>
+
+                    </td>  
+                    <td data-label="Delete">
+                    
+                        <lightning-button-icon 
+                        icon-name="utility:delete" 
+                        value={index}   
+                        alternative-text="Delete"   
+                        class="slds-m-left_xx-small" 
+                        onclick={handleDelete} 
+                        data-recordid= {emp.Id}
+                        title="Delete">
+                        </lightning-button-icon>
+
+                    </td>  
+             
+                </tr>
+            </template>
+        </tbody>
+        
+    </table>
+</template> -->
+
+
+
+
+
+<!-- <template if:true={updshow}>
+    <lightning-record-edit-form record-id={recordId}
+    object-api-name="EMPLOYEEE__c"
+     onsubmit={handleSubmit}            
+     onsuccess={handleSuccess}>
+    
+    <lightning-input-field field-name="Employee_ID__c" 
+    label="Employee ID">
+
+    </lightning-input-field>
+
+    <lightning-input-field field-name="Name" value={Name}
+    label="Employee Name" required>
+
+    </lightning-input-field>
+    <lightning-input-field field-name="Experience__c" value={Experience__c}
+    label="Experience" required>
+
+    </lightning-input-field>
+    <lightning-input-field field-name="Primary_Skill__c" value={Primary_Skill__c}
+    label="Primary Skill">
+
+    </lightning-input-field>
+    <lightning-input-field field-name="Secondary_Skill__c" value={Secondary_Skill__c}
+    label="Secondary Skill">
+    
+    </lightning-input-field>
+    
+    <lightning-button  type="submit" class="slds-m-top_small"  
+    
+    label="Update Employee">
+    </lightning-button>
+
+
+</lightning-record-edit-form>
+</template> -->
+
+
+
+
+</template>
